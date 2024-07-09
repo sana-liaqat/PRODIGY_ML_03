@@ -1,59 +1,36 @@
 # Cats vs. Dogs Image Classification Using SVM by Sana Liaqat
 
 ## Overview
-This project classifies images of cats and dogs using a Support Vector Machine (SVM). It includes data extraction, preprocessing, feature extraction, model training, and evaluation.
+This project focuses on developing an image classification system to distinguish between images of cats and dogs using machine learning techniques. The dataset employed is the "Cats vs Dogs" dataset, which contains a collection of labeled images of cats and dogs. The goal is to train a model that can accurately classify new images as either a cat or a dog.
 
-## Steps
+Key Components and Techniques:
 
-1. **Data Extraction**
-   - Download and extract the "Dogs vs. Cats" dataset from Kaggle.
-   - Organize the dataset into training and testing directories.
+1. Data Acquisition and Preprocessing:
 
-2. **Data Preprocessing**
-   - Read, resize, normalize, and flatten images.
+The project begins with acquiring the "Cats vs Dogs" dataset, which is then split into training and validation sets. The images undergo preprocessing, including resizing and normalization, to standardize them for model training.
 
-3. **Feature Extraction**
-   - Apply PCA to reduce dimensionality while retaining 80% variance.
+2. Data Augmentation:
 
-4. **Model Training**
-   - Use SVM with a grid search for hyperparameter optimization.
-   - Train using a pipeline with PCA and SVM.
+To enhance the diversity and quantity of training data, image augmentation techniques are applied using TensorFlow's ImageDataGenerator. These techniques include rotation, width and height shifting, shearing, zooming, and horizontal flipping. Augmented images help in improving the model's ability to generalize from the training data.
 
-5. **Model Evaluation**
-   - Evaluate the model on the test dataset.
-   - Generate accuracy, classification report, and confusion matrix.
+3. Model Training - Convolutional Neural Network (CNN):
 
-## Usage
+Initially, a CNN model is trained on the augmented training data. The CNN consists of multiple convolutional and pooling layers followed by fully connected layers. It learns hierarchical representations of the input images, capturing features that distinguish between cats and dogs.
 
-1. **Setup and Execution**
-   - Extract the dataset.
-   - Run the preprocessing script.
-   - Execute the training script.
-   - Evaluate the model.
+4. Feature Extraction and SVM Training:
 
-2. **Output**
-   - Best hyperparameters and cross-validation score.
-   - Test accuracy.
-   - Classification report.
-   - Confusion matrix visualization.
+Features extracted from the trained CNN model are used as input to an SVM classifier. These features represent high-level characteristics of the images that are crucial for classification. The SVM model, trained using these features, learns to delineate between cats and dogs based on the extracted feature representations.
 
-## Results
+5. Model Evaluation:
 
-- Best Parameters: `{'pca__n_components': 0.9, 'svm__kernel': 'rbf'}`
-- Best Score: `0.6757`
-- Accuracy: `0.6762`
+The performance of the SVM model is evaluated using the validation dataset. Metrics such as accuracy are computed to assess how well the model generalizes to unseen data. This evaluation ensures that the model can reliably classify new images of cats and dogs.
+Prediction:
 
-## Files
+Once trained and validated, the SVM model is capable of predicting the class (cat or dog) of new images provided by the user. The model's predictions are displayed alongside the input images, demonstrating its classification capabilities.
 
-- `confusion_matrix.png`: Confusion matrix visualization
-- `classification_report.txt`: Detailed classification report
-- `svm_model.pkl`: Trained SVM model
+6. Conclusion:
 
-## Future Work
-
-- Explore advanced feature extraction techniques.
-- Experiment with other classifiers or ensemble methods.
-- Implement data augmentation for better model robustness.
+This project illustrates the process of building an image classification system using both deep learning (CNN) and traditional machine learning (SVM) techniques. It highlights the importance of data augmentation, feature extraction, and model evaluation in developing robust and accurate image classifiers.
 
 ## Dataset
 data: https://www.kaggle.com/c/dogs-vs-cats/data
