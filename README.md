@@ -3,7 +3,7 @@
 ## Overview
 This project focuses on developing an image classification system to distinguish between images of cats and dogs using machine learning techniques. The dataset employed is the "Cats vs Dogs" dataset, which contains a collection of labeled images of cats and dogs. The goal is to train a model that can accurately classify new images as either a cat or a dog.
 
-Key Components and Techniques:
+## Key Components and Techniques:
 
 1. Data Acquisition and Preprocessing:
 
