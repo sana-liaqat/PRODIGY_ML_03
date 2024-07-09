@@ -54,3 +54,6 @@ This project classifies images of cats and dogs using a Support Vector Machine (
 - Explore advanced feature extraction techniques.
 - Experiment with other classifiers or ensemble methods.
 - Implement data augmentation for better model robustness.
+
+## Dataset
+data: https://www.kaggle.com/c/dogs-vs-cats/data
